@@ -2,13 +2,8 @@ version: 0.2
 
 phases:
   install:
-    commands:
       - echo Build completed on `date`.
-  pre_build:
-    commands:
       - echo required ENV variables REQUEST_QUEUE_ARN = $REQUEST_QUEUE_ARN, RESPONSE_QUEUE_URI = $RESPONSE_QUEUE_URI
-  build:
-    command:
       - echo Start building radiogram-consumer-lambda-app ...
       - npm install
       - echo Packaging radiogram-consumer-lambda-app...
