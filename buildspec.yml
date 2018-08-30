@@ -11,7 +11,7 @@ phases:
       - echo Build completed on `date`.
       - echo Packaging radiogram-consumer-lambda-app...
       - aws cloudformation package --template-file template.yaml --s3-bucket radiogram-consumer-lambda-app --output-template-file packaged-template.yaml
-      - aws cloudformation deploy --template-file packaged-template.yaml --stack-name cf-radiogram-cc-stack requestQueueArn=$REQUEST_QUEUE_ARN --parameter-override responseQueueUri=$RESPONSE_QUEUE_URI --capabilities CAPABILITY_IAM
+      - aws cloudformation deploy --template-file packaged-template.yaml --stack-name cf-radiogram-cc-stack --parameter-override requestQueueArn=$REQUEST_QUEUE_ARN  responseQueueUri=$RESPONSE_QUEUE_URI --capabilities CAPABILITY_IAM
 artifacts:
   files:
     - template.yaml
