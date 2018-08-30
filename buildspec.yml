@@ -1,0 +1,21 @@
+version: 0.2
+
+variables:
+  REQUEST_QUEUE_ARN: dummy
+  RESPONSE_QUEUE_URI: dummy
+
+phases:
+  pre_build:
+    commands:
+      - echo Start building radiogram-consumer-lambda-app ...
+      - npm install
+  install:
+    commands:
+      - echo Build completed on `date`.
+      - echo Packaging radiogram-consumer-lambda-app...
+      - aws cloudformation package --template-file template.yaml --s3-bucket radiogram-consumer-lambda-app --output-template-file packaged-template.yaml
+
+artifacts:
+  files:
+    - template.yaml
+    - packaged-template.yaml
