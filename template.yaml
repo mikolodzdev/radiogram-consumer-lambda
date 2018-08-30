@@ -1,0 +1,22 @@
+Transform: 'AWS::Serverless-2016-10-31'
+Parameters:
+    responseQueueUri:
+      Type: String
+    requestQueueArn:
+      Type: String
+Resources:
+  MyLambdaFunction:
+      Type: AWS::Serverless::Function
+      Properties:
+        CodeUri: ./
+        Runtime: nodejs8.10
+        Handler: index.handler
+        Events:
+          RadiogramEvent:
+            Type: SQS
+            Properties:
+              Queue: !Ref requestQueueArn
+              BatchSize: 1
+        Environment:
+          Variables:
+            RESPONSE_QUEUE_URL: !Ref responseQueueUri
