@@ -1,0 +1,22 @@
+{
+  "name": "radiogram-consumer-lambda",
+  "version": "1.0.0",
+  "description": "Lambda processor for Radiogram Cloud Challenge.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mikolodzdev/radiogram-consumer-lambda.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mikolodzdev/radiogram-consumer-lambda/issues"
+  },
+  "homepage": "https://github.com/mikolodzdev/radiogram-consumer-lambda#readme",
+  "dependencies": {
+    "lodash": "^4.17.10"
+  }
+}

@@ -1,3 +1,5 @@
+let _ = require('lodash');
+
 exports.process = (flightMsg) => {
     console.log('Processing FlightMsg: ' + JSON.stringify(flightMsg));
     let count = countWords(flightMsg.message);
@@ -17,5 +19,5 @@ function countWords(sentence) {
         return 0;
     }
     console.log('Counting words in: ' + sentence);
-    return sentence.split(" ").length;
+    return _.split(sentence).length;
 }
