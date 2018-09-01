@@ -19,5 +19,5 @@ function countWords(sentence) {
         return 0;
     }
     console.log('Counting words in: ' + sentence);
-    return _.split(sentence).length;
+    return _.split(sentence, " ").length;
 }
