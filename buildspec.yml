@@ -3,12 +3,18 @@ version: 0.2
 phases:
   install:
     commands:
-      - echo Build completed on `date`.
-      - echo Start building radiogram-consumer-lambda-app ...
+      - echo Start building radiogram-consumer-lambda-app on `date`...
+      - npm install mocha -g
+  pre_build:
+    commands:
       - npm install
+  build:
+    commands:
+      - npm test
+  post-build:
+    commands:
       - echo Packaging radiogram-consumer-lambda-app...
       - aws cloudformation package --template-file template.yaml --s3-bucket radiogram-consumer-lambda-app --output-template-file packaged-template.yaml
-
 artifacts:
   files:
     - template.yaml
