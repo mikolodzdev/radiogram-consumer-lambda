@@ -1,6 +1,0 @@
-{
-  "Parameters" : {
-    "requestQueueArn" : "arn:aws:sqs:eu-central-1:066862996875:sqs-cloudchallenge",
-    "responseQueueUri" : "https://sqs.eu-central-1.amazonaws.com/066862996875/sqs-cloudchallenge-response"
-    }
-}
